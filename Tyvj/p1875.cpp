@@ -10,8 +10,7 @@
 
 using namespace std;
 
-int main(int argc, const char * argv[])
-{
+int main(int argc, const char * argv[]) {
     int n, a = 1, b = 1;
     bool flag;
     cin >> n;
@@ -39,4 +38,3 @@ int main(int argc, const char * argv[])
     cout << a << '/' << b << endl;
     return 0;
 }
-
