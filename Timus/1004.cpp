@@ -22,13 +22,6 @@ void get_path(int a, int b) {
     }
 }
 
-bool check(int i, int j, int k) {
-    if (i != j && j != k && k != i)
-        return true;
-    else
-        return false;
-}
-
 int main() {
     while (scanf("%d", &n) && (n != -1)) {
         scanf("%d", &m);
@@ -50,7 +43,7 @@ int main() {
             for (int i = 1; i < k; i++)
                 for (int j = i+1; j < k; j++) {
                     int tmp = dis[i][j] + mp[j][k] + mp[k][i];
-                    if (check(i, j, k) && (tmp < ans)) {
+                    if (tmp < ans) {
                         ans = tmp;
                         num = 0;
                         get_path(i, j);
@@ -62,7 +55,7 @@ int main() {
             for (int i = 1; i <= n; i++)
                 for (int j = 1; j <= n; j++) {
                     int tmp = dis[i][k] + dis[k][j];
-                    if (check(i, j, k) && (dis[i][j] > tmp)) {
+                    if (dis[i][j] > tmp) {
                         dis[i][j] = tmp;
                         pre[i][j] = k;
                     }
