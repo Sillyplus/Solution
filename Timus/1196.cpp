@@ -1,30 +1,24 @@
 #include <iostream>
 #include <cstdio>
+#include <map>
 
 using namespace std;
 
-const int MN = 1e5;
-
-int f[MN][3];
+map<int, int> a;
 
 int main() {
-    int n, m, x;
+    int n, m, k, ans = 0;
     cin >> n;
     for (int i = 0; i < n; i++) {
-        scanf("%d", &x);
-        if (f[x % MN][0]) {
-            f[x % MN][2] = x;
-        } else {
-            f[x % MN][0]++;
-            f[x % MN][1] = x;
-        }
+        scanf("%d", &k);
+        a[k]++;
     }
-    int ans = 0;
     cin >> m;
     for (int i = 0; i < m; i++) {
-        scanf("%d", &x);
-        if (f[x % MN][1] == x || f[x % MN][2] == x) ans++;
+        scanf("%d", &k);
+        ans += a[k];
     }
     cout << ans << endl;
     return 0;
 }
+
