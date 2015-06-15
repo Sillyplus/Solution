@@ -13,7 +13,7 @@ const int MAXN = 6e3 + 10;
 const int INF = -1e8;
 
 int f[MAXN][2];
-int c[MAXN], root[MAXN];
+int c[MAXN];
 vector<int> guy[MAXN];
 
 void getAns(int rt, int flag) {
@@ -44,9 +44,7 @@ int main(int argc, char* argv[]) {
     }
 
     int l, r;
-    memset(root, 0, sizeof(root));
     while (scanf("%d%d", &l, &r) == 2 && (l || r)) {
-        root[l] = r;
         guy[r].push_back(l);
     }
 
